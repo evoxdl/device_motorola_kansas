@@ -4,10 +4,10 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/manaus
+DEVICE_PATH := device/motorola/kansas
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := manaus
+TARGET_BOOTLOADER_BOARD_NAME := kansas
 
 # DTBO
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
@@ -30,11 +30,9 @@ BOOT_SECURITY_PATCH := 2026-08-01
 VENDOR_SECURITY_PATCH := 2026-08-01
 
 # SKU
-ODM_MANIFEST_SKUS += be de bn dn
-ODM_MANIFEST_BE_FILES := $(DEVICE_PATH)/sku/manifest_be.xml
-ODM_MANIFEST_DE_FILES := $(DEVICE_PATH)/sku/manifest_de.xml
-ODM_MANIFEST_BN_FILES := $(DEVICE_PATH)/sku/manifest_bn.xml
+ODM_MANIFEST_SKUS += dn n
 ODM_MANIFEST_DN_FILES := $(DEVICE_PATH)/sku/manifest_dn.xml
+ODM_MANIFEST_N_FILES := $(DEVICE_PATH)/sku/manifest_n.xml
 
 # VINTF
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
@@ -43,8 +41,8 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 BOARD_AVB_ROLLBACK_INDEX := 32
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := 32
 
-# Inherit from mt6879-common
-include device/motorola/mt6879-common/BoardConfigCommon.mk
+# Inherit from mt6835-common
+include device/motorola/mt6835-common/BoardConfigCommon.mk
 
 # Inherit the proprietary files
-include vendor/motorola/manaus/BoardConfigVendor.mk
+include vendor/motorola/kansas/BoardConfigVendor.mk

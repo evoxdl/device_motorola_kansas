@@ -6,8 +6,7 @@
 
 soong_namespace {
     imports: [
-        "device/motorola/mt6879-common",
-        "hardware/motorola",
+        "device/motorola/mt6835-common",
         "hardware/google/interfaces",
         "hardware/google/pixel"
     ],

@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/manaus
+DEVICE_PATH := device/motorola/kansas
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -31,7 +31,7 @@ PRODUCT_COPY_FILES += \
 
 # MotoActions
 PRODUCT_PACKAGES += \
-    MotoActionsManaus
+    MotoActionsKansas
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml
 
-DEVICE_NFC_SKUS := be de bn dn
+DEVICE_NFC_SKUS := dn n
 
 PRODUCT_COPY_FILES += \
     $(foreach DEVICE_NFC_SKU, $(DEVICE_NFC_SKUS), \
@@ -64,18 +64,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 PRODUCT_PACKAGES += \
-    FrameworkOverlayManaus \
-    RegulatoryOverlayXT2307-1 \
-    RegulatoryOverlayXT2307-2 \
-    RegulatoryOverlayXT2307-3
+    FrameworkOverlayKansas \
+    RegulatoryOverlayXT2513-1 \
+    RegulatoryOverlayXT2513-2 \
+    RegulatoryOverlayXT2513-3 \
+    RegulatoryOverlayXT2513V
 
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH) \
-    hardware/motorola
-
-# Inherit from mt6879-common
-$(call inherit-product, device/motorola/mt6879-common/mt6879.mk)
+# Inherit from mt6835-common
+$(call inherit-product, device/motorola/mt6835-common/mt6835.mk)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/motorola/manaus/manaus-vendor.mk)
+$(call inherit-product, vendor/motorola/kansas/kansas-vendor.mk)
